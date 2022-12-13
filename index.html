@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | VRmix</title>
+    <title>Unity WebGL Player | VRMIXTA_3D</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">VRmix</div>
+        <div id="unity-build-title">VRMIXTA_3D</div>
       </div>
     </div>
     <script>
@@ -56,14 +56,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebBuild.loader.js";
+      var loaderUrl = buildUrl + "/Web.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebBuild.data.gz",
-        frameworkUrl: buildUrl + "/WebBuild.framework.js.gz",
-        codeUrl: buildUrl + "/WebBuild.wasm.gz",
+        dataUrl: buildUrl + "/Web.data.gz",
+        frameworkUrl: buildUrl + "/Web.framework.js.gz",
+        codeUrl: buildUrl + "/Web.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "VRmix",
+        productName: "VRMIXTA_3D",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
@@ -83,11 +83,13 @@
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
+
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
 
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
